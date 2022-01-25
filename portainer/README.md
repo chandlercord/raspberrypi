@@ -8,7 +8,7 @@
   2. cd to portainer directory: `cd raspberrypi/portainer/`
   3. Run docker-compose: `sudo docker-compose up -d`
   4. Verify healthy state: `sudo docker-compose ps`
-    - Healthy state should look similar:
+     1. Healthy state should look similar:
 
 ```
 pi@raspberrypi:~/raspberrypi/portainer $ sudo docker-compose ps

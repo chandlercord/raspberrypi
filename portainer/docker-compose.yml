@@ -15,7 +15,7 @@ services:
       - 8008:8000
       - 9009:9000
     healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:9000
+      test: wget --no-verbose --no-check-certificate --tries=1 --spider http://localhost:9000
       interval: 30s
       retries: 5
       start_period: 5s

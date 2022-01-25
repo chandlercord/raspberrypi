@@ -14,9 +14,9 @@
 pi@raspberrypi:~/raspberrypi/portainer $ sudo docker-compose ps
        Name           Command             State                                               Ports
 ---------------------------------------------------------------------------------------------------------------------------------------
-portainer_server_1   /portainer   Up (healthy)            0.0.0.0:8008->8000/tcp,:::8008->8000/tcp,
-                                                          0.0.0.0:9009->9000/tcp,:::9009->9000/tcp,
-                                                          0.0.0.0:9443->9443/tcp,:::9443->9443/tcp
+portainer_server_1   /portainer         Up (healthy)                      0.0.0.0:8008->8000/tcp,:::8008->8000/tcp,
+                                                                          0.0.0.0:9009->9000/tcp,:::9009->9000/tcp,
+                                                                          0.0.0.0:9443->9443/tcp,:::9443->9443/tcp
 ```
 
 ## Usage

@@ -2,20 +2,26 @@
 version: "3.1"
 
 volumes: 
-  portainer_healthcheck_data:
+  portainer_data:
+
+networks:
+  front:
 
 services:
-  portainer-healthcheck:
+  portainer:
     image: portainer/portainer-ce:2.11.0-alpine
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_healthcheck_data:/data
+      - portainer_data:/data
     ports:
       - 8008:8000
       - 9009:9000
+      - 9443:9443
+    networks:
+      - front
     healthcheck:
-      test: wget --no-verbose --no-check-certificate --tries=1 --spider http://localhost:9000
+      test: wget --no-verbose --no-check-certificate --tries=1 --spider https://localhost:9443
       interval: 30s
       retries: 5
       start_period: 5s

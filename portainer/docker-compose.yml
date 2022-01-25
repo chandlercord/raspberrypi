@@ -8,7 +8,7 @@ networks:
   front:
 
 services:
-  portainer:
+  server:
     image: portainer/portainer-ce:2.11.0-alpine
     restart: always
     volumes:

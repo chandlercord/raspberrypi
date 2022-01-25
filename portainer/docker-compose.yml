@@ -1,0 +1,23 @@
+---
+version: "3.1"
+
+volumes: 
+  portainer_healthcheck_data:
+
+services:
+  portainer-healthcheck:
+    image: portainer/portainer-ce:2.11.0-alpine
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_healthcheck_data:/data
+    ports:
+      - 8008:8000
+      - 9009:9000
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:9000
+      interval: 30s
+      retries: 5
+      start_period: 5s
+      timeout: 10s
+

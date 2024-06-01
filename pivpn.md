@@ -26,30 +26,41 @@ Dynamic DNS (DDNS) allows you to map a dynamic IP address to a static hostname. 
 ### 1.3 Install the No-IP DUC (Dynamic Update Client)
 1. Open a terminal on your Raspberry Pi.
 2. Download the No-IP DUC:
-    ```sh
+
+   ```bash
+
     cd /usr/local/src
     sudo wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz
     sudo tar xf noip-duc-linux.tar.gz
     cd noip-2.1.9-1
     sudo make
     sudo make install
+    
     ```
 
-3. Configure the No-IP DUC:
-    ```sh
+4. Configure the No-IP DUC:
+    ```bash
+    
     sudo /usr/local/bin/noip2 -C
+
     ```
-4. Enter your No-IP account credentials when prompted.
-5. To start the No-IP DUC client:
-    ```sh
+5. Enter your No-IP account credentials when prompted.
+6. To start the No-IP DUC client:
+    ```bash
+
     sudo /usr/local/bin/noip2
+
     ```
-6. To ensure it runs on startup, add the following to `/etc/rc.local`:
-    ```sh
+    
+7. To ensure it runs on startup, add the following to `/etc/rc.local`:
+    ```bash
+
     sudo nano /etc/rc.local
+
     ```
-    Add before the `exit 0` line:
-    ```sh
+
+   Add before the `exit 0` line:
+    ```bash
     /usr/local/bin/noip2
     ```
 
